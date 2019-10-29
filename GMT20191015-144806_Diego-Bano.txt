@@ -1,0 +1,77 @@
+00:27:21	Julio Pérez:	function titleChange () {            document.getElementsByTagName("h1").innerHTML = "Hello world";            }
+00:27:48	Alin:	document.querySelector("#pageTitle").innerHTML = 'This was changed with JS'
+00:28:37	Michael:	document.title = "New Title"
+00:29:02	Michael:	but i comment it out on my assignment
+00:29:06	Michael:	It's there
+00:29:46	Alin:	function changeClass() {                    var titleClass = document.querySelector('#pageTitle')                    titleClass.classList.add('myHeading')                                    }
+00:31:30	Jakub Lemiszewski:	I extended this just to test something different
+00:31:32	Jakub Lemiszewski:	var h1 = document.querySelector(".heading h1");
+
+// this handler will be executed only once when the cursor moves over the unordered list
+h1.addEventListener(
+    "mouseenter",
+    function(event) {
+        // highlight the mouseenter target
+        event.target.style.color = "purple";
+        event.target.innerHTML = "Do I change?";
+        event.target.classList.add("hover");
+
+        // reset the color after a short delay
+        setTimeout(function() {
+            event.target.style.color = "red";
+        }, 500);
+    },
+    false
+);
+
+h1.addEventListener(
+    "mouseout",
+    function(event) {
+        // highlight the mouseenter target
+        event.target.style.color = "black";
+        event.target.innerHTML = "Hello";
+        event.target.classList.add("hover");
+
+        // reset the color after a short delay
+        setTimeout(function() {
+            event.target.style.color = " darkgreen";
+        }, 500);
+    },
+    false
+);
+00:31:51	Alin:	I gave it that id
+00:31:55	Julio Pérez:	the point was doing it all without using the ID unless provided
+00:32:00	Julio Pérez:	:_(
+00:33:33	FayJu:	I can hear Jeff typing :)
+00:34:57	FayJu:	function changeText(newText) {            document.querySelector("div p").innerHTML = newText;        };
+00:35:29	Alin:	function changePS (){                                      var pChildOfDiv = document.querySelectorAll("div p")                   for (var i = 0; i<pChildOfDiv.length;i++){                   pChildOfDiv[i].innerHTML = "I am a < p > inside of a < div > and i have been changed with a JS loop"                   }               }               changePS()
+00:36:57	Alin:	is the same as yours
+00:38:05	FayJu:	        function changeLink(newLink) {            var anchorArray = document.querySelectorAll(["a"]);            anchorArray.forEach(function (element) {                element.href = newLink;            });        };
+00:38:11	Julio Pérez:	function anchorChange(){                var anchors = document.getElementsByTagName("a");                for (var i = 0; i < anchors.length; i++) {                anchors[i].href = "http://www.google.com"                }            }
+00:38:23	FayJu:	changeLink("https://www.google.com");
+00:40:31	FayJu:	function addToSecondList(something) {            var newLi = document.createElement("li");            newLi.innerHTML = something;            document.querySelector("#secondList").appendChild(newLi);        };
+00:41:04	Julio Pérez:	function addLi() {            var ul = document.getElementById("secondList");             var li = document.createElement("li");            li.appendChild(document.createTextNode("4th"));            ul.appendChild(li);            }
+00:43:15	Julio Pérez:	in case i want to add a determined text would be addLi(whatever) and then in the text node ("text")
+00:43:49	Michael:	var para = document.querySelector(div);
+            para.innerHTML += "<p>I am new here class</p>";
+00:43:51	FayJu:	function addSecondPToDiv(something) {            var newPara = document.createElement("p");            newPara.innerHTML = something;            document.querySelector("div p").parentElement.appendChild(newPara);        };
+00:44:16	Michael:	function newP(p)
+
+            var para = document.querySelector(div);
+            para.innerHTML += "<p>I am new here class</p>";
+00:46:00	FayJu:	function removeFirstUL() {            document.querySelector("#firstList").remove();        };
+00:46:09	Alin:	 function magic(){                    document.querySelector('#firstList').style.display = "none"                }                magic()
+00:46:11	Michael:	var ul = document.querySelector("ul");
+                ul.addEventListener('click', function (event){
+                    event.currentTarget.style.display = "none";
+                })
+            
+00:47:38	Alin:	 function changeBack(){                    var lists = document.querySelectorAll('ul');                    for (var i = 0; i < g.length ; i++) {                        lists[i].style.backgroundColor = 'green'                    }                                 }                changeBack()
+00:47:44	FayJu:	function backgroundUL(color) {            document.querySelectorAll("ul").forEach(function (e) {                e.style.backgroundColor = color;            });        };backgroundUL("green");
+00:49:22	FayJu:	function changeHeadingColor() {            document.querySelectorAll("h1, h2").forEach(function (e) {                if (e.style.color === "red") {                    e.style.color = "green";                } else                    e.style.color = "red";            });        };
+00:49:51	FayJu:	ops... didn't add the click functionality :-p
+00:50:36	FayJu:	<h1 class="myHeading" onclick="changeHeadingColor()">This is the title of the page</h1>        <h2 class="myHeading" onclick="changeHeadingColor()">This is the subtitle of the page</h2>
+00:50:42	FayJu:	now it's there
+00:52:52	Alin:	<body onload="alertMessage()">            function alertMessage(){                alert('Page succesfully loaded')            }
+00:52:59	Julio Pérez:	window.onload = function(){            alert('Hello World');            }
+00:55:14	Julio Pérez:	background-color: red ;
